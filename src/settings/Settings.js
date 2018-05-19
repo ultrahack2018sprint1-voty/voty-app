@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import { map } from 'lodash/fp';
 
 import styles from './Settings.css';
@@ -9,16 +10,34 @@ class Settings extends Component {
 
     this.state = {
       stands: [
-        { id: 1, name: "Brgrs" },
-        { id: 2, name: "Sausages" },
-        { id: 3, name: "Fries" },
+        { id: 1, name: "Brgrs", selected: true },
+        { id: 2, name: "Sausages", selected: true },
+        { id: 3, name: "Fries", selected: true },
       ],
     }
   }
 
+  handleChange = (standId) => {
+    const newStands = this.state.stands.map(stand => {
+      if (stand.id === standId) {
+        return { ...stand, selected: !stand.selected }
+      }
+      return stand;
+    });
+    this.setState({ stands: newStands });
+  }
+
   renderStand = (stand) => (
-    <div key={stand.id}>
-      <img src="http://placekitten.com/280/85" alt="" />
+    <div className={classnames('pretty p-switch p-fill', styles.stand)} key={stand.id}>
+      <input
+        name={`stand-stand.id`}
+        type="checkbox"
+        checked={stand.selected}
+        onChange={() => this.handleChange(stand.id)}
+        />
+      <div className="state p-success">
+        <label>{stand.name}</label>
+      </div>
     </div>
   )
 
@@ -27,14 +46,11 @@ class Settings extends Component {
 
     return (
       <div className={styles.section}>
-        <h3>Main event</h3>
-        <div className={styles.logo}>
-          <img src="http://placekitten.com/280/160" alt="" />
-        </div>
         <div className={styles.stands}>
-          <h3>Stands</h3>
+          <h3>Get notifications from...</h3>
           { map(this.renderStand, stands) }
         </div>
+        <button>Send</button>
       </div>
     )
   }

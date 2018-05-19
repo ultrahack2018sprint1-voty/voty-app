@@ -1,0 +1,9 @@
+.answers {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  button {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,24 @@
+.section {
+  text-align: left;
+
+  button {
+    margin-top: 2rem;
+  }
+}
+
+.stand {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.5);
+
+  :global(.state) label {
+    text-indent: 3.5rem !important;
+
+    &:before,
+    &:after {
+      top: -2px !important;
+    }
+  }
+}

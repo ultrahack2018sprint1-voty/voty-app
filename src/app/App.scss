@@ -1,4 +1,5 @@
 @import '../../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/pretty-checkbox/dist/pretty-checkbox.min.css';
 
 $color-yellow: #FED330;
 $color-blue-very-light: #A0CBEA;
@@ -71,7 +72,6 @@ body {
 .contentWrapper {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   text-align: center;
   flex-grow: 1;
 }
@@ -82,23 +82,24 @@ body {
   background-image: url('./assets/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
-  margin: 3rem auto 8rem;
+  margin: 3rem auto 6.5rem;
 }
 
 button {
   background: none;
   border: 0 none;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem;
   background-color: #2676ff;
   color: $color-white;
   border-radius: 3px;
   letter-spacing: 1px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 3px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
   display: flex;
   justify-content: center;
-  min-width: 15rem;
+  min-width: 10rem;
   cursor: pointer;
   outline: none;
+  margin: 0 auto;
 }
 
 p {
