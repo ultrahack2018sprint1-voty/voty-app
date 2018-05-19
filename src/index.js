@@ -1,8 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './app/App';
+import { BrowserRouter, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './app/App';
+import Welcome from './welcome/Welcome';
+import Settings from './settings/Settings';
+import Question from './question/Question';
+
+import './index.css';
+
+ReactDOM.render(
+  <BrowserRouter>
+    <div className="wrapper">
+      <Route path="/" component={App} />
+      <Route path="/welcome" component={Welcome} />
+      <Route path="/settings" component={Settings} />
+      <Route path="/question" component={Question} />
+    </div>
+  </BrowserRouter>,
+  document.getElementById('root')
+);
+
 registerServiceWorker();
