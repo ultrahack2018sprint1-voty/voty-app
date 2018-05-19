@@ -4,7 +4,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div>Hello World!</div>
+      <div className="wrapper">Hello World!</div>
     );
   }
 }
