@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
 import './App.css';
+
+require('dotenv').config();
 
 class App extends Component {
   render() {
