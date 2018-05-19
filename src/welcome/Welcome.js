@@ -8,6 +8,10 @@ class Welcome extends Component {
         <div className={styles.logo}>
           <img src="http://placekitten.com/280/200" alt="" />
         </div>
+        <div>
+          <p>Do you agree to receive notifications?</p>
+          <button>YES</button>
+        </div>
       </div>
     )
   }
