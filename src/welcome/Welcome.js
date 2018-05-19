@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import './Welcome.css';
+import styles from './Welcome.css';
 
 class Welcome extends Component {
   render() {
     return (
-      <h1>Welcome</h1>
+      <div className={styles.section}>
+        <div className={styles.logo}>
+          <img src="http://placekitten.com/280/200" alt="" />
+        </div>
+      </div>
     )
   }
 }

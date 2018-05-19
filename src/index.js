@@ -8,11 +8,11 @@ import Welcome from './welcome/Welcome';
 import Settings from './settings/Settings';
 import Question from './question/Question';
 
-import './index.css';
+import styles from './index.css';
 
 ReactDOM.render(
   <BrowserRouter>
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <Route path="/" component={App} />
       <Route path="/welcome" component={Welcome} />
       <Route path="/settings" component={Settings} />
