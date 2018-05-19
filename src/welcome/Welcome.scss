@@ -1,4 +1,16 @@
+.section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1
+}
+
 .logo {
   display: flex;
   justify-content: center;
+}
+
+.btnAccept {
+  margin: 2rem auto;
 }

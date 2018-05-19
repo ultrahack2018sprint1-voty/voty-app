@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Sockette from 'sockette';
+import { withRouter } from 'react-router-dom';
 import styles from './Welcome.css';
 
 class Welcome extends Component {
@@ -11,15 +12,11 @@ class Welcome extends Component {
     }
   }
 
-  componentDidMount() {
-    this.openConnection();
-  }
-
   openConnection = () => {
     const ws = new Sockette(process.env.REACT_APP_WS_URL, {
       timeout: 5e3,
       maxAttempts: 10,
-      onopen: e => console.log('Connected!', e),
+      onopen: this.onOpen,
       onmessage: this.onMessage,
       onreconnect: e => console.log('Reconnecting...', e),
       onmaximum: e => console.log('Stop Attempting!', e),
@@ -37,6 +34,13 @@ class Welcome extends Component {
     }
   }
 
+  onOpen = (e) => {
+    const { history } = this.props;
+
+    console.log('Connected!', e);
+    history.push('/settings');
+  }
+
   onMessage = (e) => {
     console.log('Received:', e);
     console.log('Message:', e.data);
@@ -45,16 +49,16 @@ class Welcome extends Component {
   render() {
     return (
       <div className={styles.section}>
-        <div className={styles.logo}>
-          <img src="http://placekitten.com/280/200" alt="" />
-        </div>
         <div>
           <p>Do you agree to receive notifications?</p>
-          <button onClick={this.closeConnection.bind(this)}>YES</button>
+          <button
+            onClick={this.openConnection.bind(this)}
+            className={styles.btnAccept}
+          >YES</button>
         </div>
       </div>
     )
   }
 }
 
-export default Welcome;
+export default withRouter(Welcome);
