@@ -22,3 +22,17 @@
     }
   }
 }
+
+.logo {
+  width: 150px;
+  height: 70px;
+  background-image: url('../app/assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 3rem auto 9rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  letter-spacing: 0;
+}

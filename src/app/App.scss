@@ -76,20 +76,11 @@ body {
   flex-grow: 1;
 }
 
-.logo {
-  width: 150px;
-  height: 70px;
-  background-image: url('./assets/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin: 3rem auto 6.5rem;
-}
-
 button {
   background: none;
   border: 0 none;
   padding: 0.75rem 1rem;
-  background-color: #2676ff;
+  background-color: #F96B58;
   color: $color-white;
   border-radius: 3px;
   letter-spacing: 1px;

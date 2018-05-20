@@ -10,9 +10,9 @@ class Settings extends Component {
 
     this.state = {
       stands: [
-        { id: 1, name: "Brgrs", selected: true },
-        { id: 2, name: "Sausages", selected: true },
-        { id: 3, name: "Fries", selected: true },
+        { id: 1, name: "UltraHack", selected: true },
+        { id: 2, name: "Tacobot", selected: false },
+        { id: 3, name: "Fries", selected: false },
       ],
     }
   }
@@ -35,7 +35,7 @@ class Settings extends Component {
         checked={stand.selected}
         onChange={() => this.handleChange(stand.id)}
         />
-      <div className="state p-success">
+      <div className="state">
         <label>{stand.name}</label>
       </div>
     </div>
@@ -46,11 +46,12 @@ class Settings extends Component {
 
     return (
       <div className={styles.section}>
+        <div className={styles.logo} />
         <div className={styles.stands}>
-          <h3>Get notifications from...</h3>
+          {/* <h2>Related companies</h2> */}
+          <h3>Receive notifications from...</h3>
           { map(this.renderStand, stands) }
         </div>
-        <button>Send</button>
       </div>
     )
   }
